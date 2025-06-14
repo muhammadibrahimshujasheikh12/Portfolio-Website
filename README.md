@@ -1,8 +1,8 @@
-A sleek, modern, and fully responsive web developer portfolio built to highlight my work, skills, and professional experience. This portfolio is designed with a mobile-first approach to ensure optimal viewing on all devices, from smartphones to desktops. It features elegant smooth animations and interactive transitions to create a visually engaging user experience.
+A sleek, modern, and fully responsive web developer portfolio built to highlight my work, skills, and professional experience. This portfolio is designed with a mobile-first approach to ensure optimal viewing on all devices, from smartphones to desktops. It features elegant, smooth animations and interactive transitions, creating a visually engaging user experience.
 
-To enhance usability, it includes a toggleable dark mode, allowing users to switch between light and dark themes seamlessly. The design is built with clean, semantic HTML, modular CSS (Tailwind), and JavaScript/React components, ensuring both maintainability and performance.
+To enhance usability, it includes a toggleable dark mode, allowing users to switch between light and dark themes seamlessly. The design is built with clean, semantic HTML, modular CSS (Bootstrap), and JavaScript/jQuery components, ensuring both maintainability and performance.
 
-Under the hood, the site is fully SEO-optimized with proper metadata, structured content, and fast load times, improving visibility in search engine results and making it easier for potential employers and clients to discover my work.
+Under the hood, the site is fully SEO-optimized with proper metadata, structured content, and fast load times, which improves visibility in search engine results and makes it easier for potential employers and clients to discover my work.
 
 This portfolio showcases:
 
