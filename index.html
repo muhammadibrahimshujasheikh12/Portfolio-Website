@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Portfolio of Muhammad Ibrahim -  Front-End Developer, Front-End Designer, O-levels Student.">
+  <meta name="keywords" content="Portfolio, Front-End Developer, UX-UI Designer, O-levels Student, Resume, Projects">
+  <meta name="author" content="Muhammad Ibrahim">
+  <title>Muhammad Ibrahim | Portfolio</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: #000;
+      --main-blue: #00aaff;
+      --main-blue-light: #33ccff;
+      --main-white: #fff;
+      --main-gray: #222;
+      --main-dark: #111;
+      --main-shadow: 0 4px 24px rgba(0, 170, 255, 0.08);
+    }
+
+    html,
+    body {
+      background: var(--main-bg);
+      color: var(--main-blue);
+      font-family: 'Montserrat', Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    a,
+    a:visited,
+    a:active {
+      color: var(--main-blue);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--main-blue-light);
+    }
+
+    /* Navbar */
+    .navbar {
+      background: var(--main-bg) !important;
+      box-shadow: var(--main-shadow);
+    }
+
+    .navbar-nav {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--main-blue) !important;
+      font-weight: 600;
+      margin: 0 1rem;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+
+    .navbar-nav .nav-link.active,
+    .navbar-nav .nav-link:hover {
+      color: var(--main-blue-light) !important;
+    }
+
+    .navbar-toggler {
+      border: none;
+      color: var(--main-blue);
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--main-bg);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #preloader .spinner-border {
+      color: var(--main-blue);
+      width: 3rem;
+      height: 3rem;
+    }
+
+    /* Hero */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      background: var(--main-bg);
+      position: relative;
+    }
+
+    #hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--main-blue);
+      margin-bottom: 1rem;
+    }
+
+    #hero .typed-text {
+      font-size: 1.5rem;
+      color: var(--main-blue-light);
+      font-weight: 500;
+      min-height: 2.5rem;
+      letter-spacing: 2px;
+    }
+
+    #hero .cta-btn {
+      margin-top: 2rem;
+      padding: 0.75rem 2.5rem;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      background: var(--main-blue);
+      color: var(--main-bg);
+      border: none;
+      font-weight: 700;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    #hero .cta-btn:hover {
+      background: var(--main-blue-light);
+      color: var(--main-bg);
+    }
+
+    /* About */
+    #about {
+      padding: 5rem 0 3rem 0;
+      background: var(--main-dark);
+    }
+
+    #about .profile-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--main-blue);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 24px rgba(0, 170, 255, 0.15);
+    }
+
+    #about h2 {
+      color: var(--main-blue-light);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    #about .bio {
+      color: var(--main-white);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    #about .edu {
+      color: var(--main-blue);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Skills */
+    #skills {
+      background: var(--main-bg);
+      padding: 4rem 0 3rem 0;
+    }
+
+    #skills h2 {
+      color: var(--main-blue-light);
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .skill-bar {
+      background: var(--main-gray);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 12px rgba(0, 170, 255, 0.08);
+    }
+
+    .skill-bar .skill-level {
+      height: 32px;
+      background: linear-gradient(90deg, var(--main-blue), var(--main-blue-light));
+      color: var(--main-bg);
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 32px;
+      padding-left: 1rem;
+      border-radius: 20px 0 0 20px;
+      transition: width 1.2s cubic-bezier(.77, 0, .18, 1);
+    }
+
+    .skill-label {
+      color: var(--main-white);
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+      font-weight: 500;
+    }
+
+    /* Projects */
+    #projects {
+      background: var(--main-dark);
+      padding: 4rem 0 3rem 0;
+    }
+
+    #projects h2 {
+      color: var(--main-blue-light);
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .project-card {
+      background: var(--main-bg);
+      border: 1px solid var(--main-blue);
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(0, 170, 255, 0.10);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(0, 170, 255, 0.18);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--main-blue);
+    }
+
+    .project-card .card-body {
+      color: var(--main-white);
+    }
+
+    .project-card .tech-used {
+      font-size: 0.95rem;
+      color: var(--main-blue-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card .btn {
+      background: var(--main-blue);
+      color: var(--main-bg);
+      border: none;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      transition: background 0.2s;
+    }
+
+    .project-card .btn:hover {
+      background: var(--main-blue-light);
+      color: var(--main-bg);
+    }
+
+    /*Project Card Styles */
+    .project-card.improved {
+      background: var(--main-bg);
+      border: 1.5px solid var(--main-blue);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0, 170, 255, 0.10);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.18s, box-shadow 0.18s;
+      min-height: 420px;
+      outline: none;
+    }
+
+    .project-card.improved:focus-within,
+    .project-card.improved:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(0, 170, 255, 0.22);
+      border-color: var(--main-blue-light);
+    }
+
+    .project-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      height: 180px;
+      background: #111;
+    }
+
+    .project-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: filter 0.3s;
+    }
+
+    .project-card.improved:hover .project-img {
+      filter: brightness(0.85) blur(1px);
+    }
+
+    .project-tags {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .project-tags .badge {
+      background: var(--main-blue);
+      color: var(--main-bg);
+      font-size: 0.8rem;
+      border-radius: 12px;
+      padding: 0.3em 0.7em;
+      opacity: 0.92;
+      font-weight: 600;
+    }
+
+    .project-body {
+      flex: 1 1 auto;
+      padding: 1.2rem 1.2rem 1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-title {
+      color: var(--main-blue-light);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .project-desc {
+      color: var(--main-white);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      flex: 1 1 auto;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.7rem;
+      align-items: center;
+    }
+
+    .icon-link {
+      color: var(--main-blue);
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+
+    .icon-link:hover {
+      color: var(--main-blue-light);
+    }
+
+    @media (max-width: 767px) {
+      .project-img-wrapper {
+        height: 120px;
+      }
+
+      .project-card.improved {
+        min-height: 340px;
+      }
+    }
+
+    /* Resume */
+    #resume {
+      background: var(--main-bg);
+      padding: 4rem 0 3rem 0;
+    }
+
+    #resume h2 {
+      color: var(--main-blue-light);
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--main-blue);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 2.5rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 8px;
+      top: 6px;
+      width: 20px;
+      height: 20px;
+      background: var(--main-blue-light);
+      border-radius: 50%;
+      border: 3px solid var(--main-bg);
+      z-index: 1;
+    }
+
+    .timeline-content {
+      background: var(--main-dark);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      color: var(--main-white);
+      box-shadow: 0 2px 12px rgba(0, 170, 255, 0.08);
+    }
+
+    .timeline-content h5 {
+      color: var(--main-blue);
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-content small {
+      color: var(--main-blue-light);
+    }
+
+    .download-cv-btn {
+      margin-top: 1.5rem;
+      padding: 0.6rem 2rem;
+      border-radius: 30px;
+      background: var(--main-blue);
+      color: var(--main-bg);
+      border: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: background 0.2s;
+    }
+
+    .download-cv-btn:hover {
+      background: var(--main-blue-light);
+      color: var(--main-bg);
+    }
+
+    /* Contact */
+    #contact {
+      background: var(--main-dark);
+      padding: 4rem 0 3rem 0;
+    }
+
+    #contact h2 {
+      color: var(--main-blue-light);
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: var(--main-bg);
+      border: 1px solid var(--main-blue);
+      color: var(--main-white);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      transition: border 0.2s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--main-blue-light);
+      outline: none;
+    }
+
+    .contact-form .btn {
+      background: var(--main-blue);
+      color: var(--main-bg);
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.6rem 2rem;
+      border: none;
+      transition: background 0.2s;
+    }
+
+    .contact-form .btn:hover {
+      background: var(--main-blue-light);
+      color: var(--main-bg);
+    }
+
+    .social-icons a {
+      color: var(--main-blue);
+      font-size: 1.7rem;
+      margin: 0 0.7rem;
+      transition: color 0.2s;
+    }
+
+    .social-icons a:hover {
+      color: var(--main-blue-light);
+    }
+
+    /* Newsletter */
+    .newsletter-form input[type="email"] {
+      background: var(--main-bg);
+      border: 1px solid var(--main-blue);
+      color: var(--main-white);
+      border-radius: 10px;
+      padding: 0.7rem 1rem;
+      margin-right: 0.5rem;
+      font-size: 1rem;
+      width: 220px;
+      transition: border 0.2s;
+    }
+
+    .newsletter-form input[type="email"]:focus {
+      border-color: var(--main-blue-light);
+      outline: none;
+    }
+
+    .newsletter-form .btn {
+      background: var(--main-blue);
+      color: var(--main-bg);
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.6rem 1.5rem;
+      border: none;
+      transition: background 0.2s;
+    }
+
+    .newsletter-form .btn:hover {
+      background: var(--main-blue-light);
+      color: var(--main-bg);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--main-bg);
+      color: var(--main-blue);
+      padding: 2rem 0 1rem 0;
+      text-align: center;
+      font-size: 1rem;
+      border-top: 1px solid var(--main-blue);
+    }
+
+    footer .footer-links a {
+      color: var(--main-blue);
+      margin: 0 1rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+
+    footer .footer-links a:hover {
+      color: var(--main-blue-light);
+    }
+
+    footer .social-icons {
+      margin-top: 1rem;
+    }
+
+    /* Back to Top */
+    #backToTop {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      background: var(--main-blue);
+      color: var(--main-bg);
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      z-index: 999;
+      box-shadow: 0 2px 12px rgba(0, 170, 255, 0.18);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    #backToTop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Dark Mode */
+    .dark-mode {
+      --main-bg: #fff;
+      --main-blue: #0077cc;
+      --main-blue-light: #3399ff;
+      --main-white: #222;
+      --main-gray: #eee;
+      --main-dark: #f5f5f5;
+    }
+
+    .dark-mode body,
+    .dark-mode html {
+      background: var(--main-bg) !important;
+      color: var(--main-blue) !important;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(.77, 0, .18, 1), transform 0.8s cubic-bezier(.77, 0, .18, 1);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 767px) {
+      #hero h1 {
+        font-size: 2.1rem;
+      }
+
+      .project-card img {
+        height: 120px;
+      }
+
+      .navbar-nav .nav-link {
+        margin: 0.5rem 0;
+      }
+
+      .timeline-content {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner-border" role="status"></div>
+  </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#hero" style="color:var(--main-blue-light);font-size:1.5rem;">MI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon" style="color:var(--main-blue);"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <button id="darkModeToggle" class="btn btn-sm ms-lg-3" title="Toggle dark mode"
+          style="background:var(--main-blue);color:var(--main-bg);border-radius:50%;width:38px;height:38px;">
+          <i class="fa fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <section id="hero">
+    <h1>Hi, I'm <span style="color:var(--main-blue-light);">Muhammad Ibrahim</span></h1>
+    <div class="typed-text" id="typed"></div>
+    <a href="#projects" class="cta-btn">View My Work</a>
+    <div class="newsletter-form mt-5">
+      <form id="newsletterForm" class="d-flex justify-content-center align-items-center flex-wrap">
+        <input type="email" name="newsletter_email" placeholder="Subscribe for updates" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+      <div id="newsletterMsg" class="mt-2" style="color:var(--main-blue-light);font-size:1rem;"></div>
+    </div>
+  </section>
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-4 text-center">
+          <img src="i.png" alt="Logo" class="profile-img fade-in">
+        </div>
+        <div class="col-md-7 offset-md-1">
+          <h2>About Me</h2>
+          <p class="bio fade-in">
+            I'm Muhammad Ibrahim, a passionate <b>Front-End Developer</b> and <b>UI/UX Designer</b> based in Pakistan. I
+            love building modern, responsive web applications and crafting delightful user experiences. Currently, I'm a
+            Computer Science student at PKU.
+          </p>
+          <div class="edu fade-in">
+            <i class="fa fa-graduation-cap"></i> O level Computer Science, PKU (2022 - 2026)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="text-center">Skills</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="skill-label">HTML5</div>
+          <div class="skill-bar">
+            <div class="skill-level" data-level="95">95%</div>
+          </div>
+          <div class="skill-label">CSS3</div>
+          <div class="skill-bar">
+            <div class="skill-level" data-level="90">90%</div>
+          </div>
+          <div class="skill-label">JavaScript / jQuery</div>
+          <div class="skill-bar">
+            <div class="skill-level" data-level="88">88%</div>
+          </div>
+          <div class="skill-label">Bootstrap</div>
+          <div class="skill-bar">
+            <div class="skill-level" data-level="85">85%</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="skill-label">Teamwork</div>
+          <div class="skill-bar">
+            <div class="skill-level" data-level="90">90%</div>
+          </div>
+          <div class="skill-label">Communication</div>
+          <div class="skill-bar">
+            <div class="skill-level" data-level="92">92%</div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4 text-center">
+        <div class="col-6 col-md-3">
+          <i class="fab fa-html5 fa-2x"></i>
+          <div>HTML5</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="fab fa-css3-alt fa-2x"></i>
+          <div>CSS3</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <i class="fab fa-js-square fa-2x"></i>
+          <div>JavaScript</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <!-- Using Font Awesome JS icon -->
+          <i class="fab fa-js fa-2x"></i>
+          <div>JQuery</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="projects">
+    <div class="container">
+      <h2 class="text-center mb-5">Projects</h2>
+      <div class="row g-4">
+        <!-- Project Card 1 -->
+        <div class="col-md-6 col-lg-4">
+          <article class="project-card improved fade-in" tabindex="0">
+            <div class="project-img-wrapper">
+              <img src="porfolio image.png" alt="Screenshot of Portfolio Website" class="project-img" />
+              <div class="project-tags">
+                <span class="badge bg-primary">HTML5</span>
+                <span class="badge bg-primary">CSS3</span>
+                <span class="badge bg-primary">Bootstrap</span>
+                <span class="badge bg-primary">JS</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h5 class="project-title">Portfolio Website</h5>
+              <p class="project-desc">A modern, responsive portfolio to showcase my work and skills. Features smooth
+                animations, dark mode, and SEO optimization.</p>
+              <div class="project-links">
+                <a href="https://github.com/" target="_blank" aria-label="GitHub" class="icon-link"><i
+                    class="fab fa-github"></i></a>
+                <a href="index.html" target="_blank" aria-label="Live Demo" class="icon-link"><i
+                    class="fa fa-external-link-alt"></i></a>
+                <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal"
+                  data-bs-target="#projectModal1">Details</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- Project Card 2 -->
+        <div class="col-md-6 col-lg-4">
+          <article class="project-card improved fade-in" tabindex="0">
+            <div class="project-img-wrapper">
+              <img src="" alt="Screenshot of Waters Aquatic Website" class="project-img" />
+              <div class="project-tags">
+                <span class="badge bg-primary">HTML5</span>
+                <span class="badge bg-primary">CSS3</span>
+                <span class="badge bg-primary">JS</span>
+                <span class="badge bg-primary">Bootstrap</span>
+
+
+
+              </div>
+            </div>
+            <div class="project-body">
+              <h5 class="project-title">Waters Aquatic Website</h5>
+              <p class="project-desc">A front-end site combining shop and blog features. Includes secure authentication,
+                real-time updates, and a clean, responsive design.</p>
+              <div class="project-links">
+                <a href="https://github.com/" target="_blank" aria-label="GitHub" class="icon-link"><i
+                    class="fab fa-github"></i></a>
+                <a href="#" target="_blank" aria-label="Live Demo" class="icon-link"><i
+                    class="fa fa-external-link-alt"></i></a>
+                <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal"
+                  data-bs-target="#projectModal2">Details</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- Project Card 3 -->
+        <div class="col-md-6 col-lg-4">
+          <article class="project-card improved fade-in" tabindex="0">
+            <div class="project-img-wrapper">
+              <img src="" alt="Screenshot of Demo Website" class="project-img" />
+              <div class="project-tags">
+                <span class="badge bg-primary">HTML5</span>
+                <span class="badge bg-primary">CSS3</span>
+                <span class="badge bg-primary">JS</span>
+                <span class="badge bg-primary">Bootstrap</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h5 class="project-title"> Demo Website</h5>
+              <p class="project-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, nostrum?
+                Laboriosam rerum ea perspiciatis ex asperiores fugiat.</p>
+              <div class="project-links">
+                <a href="https://github.com/" target="_blank" aria-label="GitHub" class="icon-link"><i
+                    class="fab fa-github"></i></a>
+                <a href="#" target="_blank" aria-label="Live Demo" class="icon-link"><i
+                    class="fa fa-external-link-alt"></i></a>
+                <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal"
+                  data-bs-target="#projectModal3">Details</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <!-- Project Modals -->
+      <div class="modal fade" id="projectModal1" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content" style="background:var(--main-dark);color:var(--main-white);">
+            <div class="modal-header">
+              <h5 class="modal-title">Portfolio Website</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter:invert(1);"></button>
+            </div>
+            <div class="modal-body">
+              <img src="porfolio image.png" alt="Portfolio Screenshot" class="img-fluid mb-3">
+              <p>This is my personal portfolio website built with HTML5, CSS3, Bootstrap, and JavaScript. It features a
+                custom design, responsive layout, and interactive elements.</p>
+              <ul>
+                <li>Custom, modern design</li>
+                <li>Mobile responsive</li>
+                <li>SEO optimized</li>
+                <li>Animated sections</li>
+              </ul>
+              <a href="https://github.com/" target="_blank" class="btn btn-sm"><i class="fab fa-github"></i> GitHub</a>
+              <a href="index.html" target="_blank" class="btn btn-sm"><i class="fa fa-external-link-alt"></i> Live
+                Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="projectModal2" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content" style="background: var(--main-dark); color: var(--main-white);">
+            <div class="modal-header">
+              <h5 class="modal-title">Waters Aquatic Website</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: invert(1);"></button>
+            </div>
+            <div class="modal-body">
+              <img src="" alt="Waters Aquatic Website Screenshot" class="img-fluid mb-3">
+              <p>A front-end site combining shop and blog features. Includes secure authentication, real-time updates,
+                and a clean, responsive design.</p>
+              <ul>
+                <li>Shop and blog integration</li>
+                <li>Secure user authentication</li>
+                <li>Real-time updates</li>
+                <li>Responsive design</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="https://github.com/" target="_blank" class="btn btn-sm"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#" target="_blank" class="btn btn-sm"><i class="fa fa-external-link-alt"></i> Live Demo</a>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="modal fade" id="projectModal3" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content" style="background:var(--main-dark);color:var(--main-white);">
+          <div class="modal-header">
+            <h5 class="modal-title">Demo Website</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter:invert(1);"></button>
+          </div>
+          <div class="modal-body">
+            <img src="" alt="Demo Website Screenshot" class="img-fluid mb-3">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, est! Alias, doloremque officiis culpa
+              sapiente velit tempore non error est iste sequi voluptatem a distinctio magni nam. Cupiditate, doloremque
+              quas!t.</p>
+            <ul>
+              <li>Lorem</li>
+              <li>Lorem</li>
+              <li>Lorem</li>
+            </ul>
+            <a href="https://github.com/" target="_blank" class="btn btn-sm"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" target="_blank" class="btn btn-sm"><i class="fa fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  </div>
+  </section>
+  <!-- Resume Section -->
+  <section id="resume">
+    <div class="container">
+      <h2 class="text-center">Resume / Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h5>Front-End Developer Intern</h5>Developed internal tools with jQuery and Bootstrap, resulting in a 30%
+            increase in workflow efficiencyDeveloped internal tools using JQuery and Bootstrap, improving workflow
+            efficiency by 30%.</p>
+          </div>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h5>Freelance Web Designer</h5>
+            <small>Remote | 2025 - Present</small>
+            <p>Designed and built custom websites for small businesses and startups.</p>
+          </div>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h5>Computer Science Student</h5>
+            <small>PKU | 2023 - 2026</small>
+            <p>Studying algorithms, data structures, and software engineering.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="resume.pdf" download class="download-cv-btn"><i class="fa fa-download"></i> Download CV</a>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="text-center">Contact</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+          <form class="contact-form" id="contactForm" autocomplete="off">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="contactName" name="name" placeholder="Your Name" required>
+              <label for="contactName">Your Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="contactEmail" name="email" placeholder="Your Email" required>
+              <label for="contactEmail">Your Email</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea class="form-control" id="contactMessage" name="message" placeholder="Your Message"
+                style="height: 120px;" required></textarea>
+              <label for="contactMessage">Your Message</label>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="btn" id="contactSubmitBtn">
+                <span id="contactBtnText">Send Message</span>
+                <span id="contactBtnSpinner" class="spinner-border spinner-border-sm d-none" role="status"
+                  aria-hidden="true"></span>
+              </button>
+            </div>
+            </button>
+            <div id="contactMsg" class="mt-2 text-center" style="color:var(--main-blue-light);font-size:1rem;"></div>
+            <p class="text-center text-blue-50 mb-4">I'd love to hear from you! Fill out the form or reach out via
+              social links.</p>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to top"><i class="fa fa-arrow-up"></i></button>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links mb-2">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://github.com/muhammadibrahimshujasheikh12" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/muhammad-ibrahim-shuja-sheikh-a4644235b/" target="_blank"><i
+          class="fab fa-linkedin"></i></a>
+      <a href="mailto:muhammadibrahimshujasheikh12@gmail.com"><i class="fa fa-envelope"></i></a>
+    </div>
+    <div class="mt-2">&copy; 2025 Muhammad Ibrahim All rights reserved.</div>
+  </footer>
+  <!-- Bootstrap 5 JS + Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // Preloader
+    $(window).on('load', function () {
+      $('#preloader').fadeOut(500);
+    });
+
+    // Smooth Scroll
+    $('.navbar-nav .nav-link, .footer-links a, .cta-btn').on('click', function (e) {
+      var target = $(this).attr('href');
+      if (target.startsWith('#')) {
+        e.preventDefault();
+        $('html, body').animate({
+          scrollTop: $(target).offset().top - 60
+        }, 700);
+        $('.navbar-collapse').collapse('hide');
+      }
+    });
+
+    // Navbar active link
+    $(window).on('scroll', function () {
+      var scrollPos = $(document).scrollTop();
+      $('.navbar-nav .nav-link').each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.length && refElement.offset().top - 80 <= scrollPos) {
+          $('.navbar-nav .nav-link').removeClass("active");
+          currLink.addClass("active");
+        }
+      });
+    });
+
+    // Typing Text Effect
+    var typedStrings = ["Front-End Developer", "UX-UI Designer", " O-Levels Student"];
+    var typedIndex = 0, charIndex = 0, typing = true;
+    function typeEffect() {
+      var current = typedStrings[typedIndex];
+      if (typing) {
+        $('#typed').text(current.substring(0, charIndex++));
+        if (charIndex > current.length) {
+          typing = false;
+          setTimeout(typeEffect, 1000);
+        } else {
+          setTimeout(typeEffect, 90);
+        }
+      } else {
+        $('#typed').text(current.substring(0, charIndex--));
+        if (charIndex < 0) {
+          typing = true;
+          typedIndex = (typedIndex + 1) % typedStrings.length;
+          setTimeout(typeEffect, 400);
+        } else {
+          setTimeout(typeEffect, 40);
+        }
+      }
+    }
+    $(document).ready(function () {
+      typeEffect();
+
+      // Skill Bars Animation
+      function animateSkills() {
+        $('.skill-level').each(function () {
+          var $this = $(this);
+          var level = $this.data('level');
+          $this.css('width', level + '%');
+        });
+      }
+      var skillsAnimated = false;
+      $(window).on('scroll', function () {
+        var skillsTop = $('#skills').offset().top - $(window).height() + 100;
+        if (!skillsAnimated && $(window).scrollTop() > skillsTop) {
+          animateSkills();
+          skillsAnimated = true;
+        }
+      });
+
+      // Scroll-based fade-in animations
+      function fadeInOnScroll() {
+        $('.fade-in').each(function () {
+          var elemTop = $(this).offset().top;
+          var winBottom = $(window).scrollTop() + $(window).height();
+          if (elemTop < winBottom - 40) {
+            $(this).addClass('visible');
+          }
+        });
+      }
+      $(window).on('scroll', fadeInOnScroll);
+      fadeInOnScroll();
+
+      // Back to Top Button
+      $(window).on('scroll', function () {
+        if ($(window).scrollTop() > 300) {
+          $('#backToTop').addClass('show');
+        } else {
+          $('#backToTop').removeClass('show');
+        }
+      });
+      $('#backToTop').on('click', function () {
+        $('html, body').animate({ scrollTop: 0 }, 700);
+      });
+
+      // Dark Mode Toggle
+      $('#darkModeToggle').on('click', function () {
+        $('html').toggleClass('dark-mode');
+        var icon = $(this).find('i');
+        if ($('html').hasClass('dark-mode')) {
+          icon.removeClass('fa-moon').addClass('fa-sun');
+        } else {
+          icon.removeClass('fa-sun').addClass('fa-moon');
+        }
+      });
+
+      // Animated Counters (for skills or stats)
+      function animateCounters() {
+        $('.skill-level').each(function () {
+          var $this = $(this);
+          var level = $this.data('level');
+          $({ countNum: 0 }).animate({ countNum: level }, {
+            duration: 1200,
+            easing: 'swing',
+            step: function () {
+              $this.text(Math.floor(this.countNum) + '%');
+            },
+            complete: function () {
+              $this.text(level + '%');
+            }
+          });
+        });
+      }
+      var countersAnimated = false;
+      $(window).on('scroll', function () {
+        var skillsTop = $('#skills').offset().top - $(window).height() + 100;
+        if (!countersAnimated && $(window).scrollTop() > skillsTop) {
+          animateCounters();
+          countersAnimated = true;
+        }
+      });
+
+      $('#contactForm').on('submit', function (e) {
+        e.preventDefault();
+        $('#contactBtnText').addClass('d-none');
+        $('#contactBtnSpinner').removeClass('d-none');
+        setTimeout(function () {
+          $('#contactMsg').text('Thank you! Your message has been sent.').fadeIn();
+          $('#contactBtnText').removeClass('d-none');
+          $('#contactBtnSpinner').addClass('d-none');
+          setTimeout(function () { $('#contactMsg').fadeOut(); }, 3000);
+          $('#contactForm')[0].reset();
+        }, 1200);
+      });
+
+      // Newsletter Form 
+      $('#newsletterForm').on('submit', function (e) {
+        e.preventDefault();
+        $('#newsletterMsg').text('Subscribed! Thank you.').fadeIn();
+        setTimeout(function () { $('#newsletterMsg').fadeOut(); }, 3000);
+        this.reset();
+      });
+    });
+  </script>
+</body>
+
+</html>
